@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Layout</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h1>자화수</h1>
+        <ul>
+          <li><a href="#">대시보드</a></li>
+           <li><a href="manage.html">자화수 관리</a></li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="header">
+          <div id="date-time">time</div>
+          <div class="user">
+            <span>Thinking Chair</span>
+          </div>
+        </div>
+        <div class="dashboard">
+          <div class="card pie-chart">
+            <h3>재배 현황</h3>
+            <div class="chart">
+              <canvas id="pieChart"></canvas>
+            </div>
+          </div>
+          <div class="card bar-chart">
+            <div class="card-header">
+              <h3>실시간 수분량</h3>
+              <!-- <button class="details-btn">더보기</button> -->
+            </div>
+            <div class="chart">
+              <canvas id="barChart"></canvas>
+            </div>
+          </div>
+          <div class="card line-chart">
+            <div class="card-header">
+              <h3>시간별 온습도</h3>
+              <!-- <button class="details-btn">더보기</button> -->
+              <!-- <button class="details-btn" onclick="window.location.href='condition_detail.html'">더보기</button> -->
+            </div>
+            <div class="chart">
+              <canvas id="lineChart"></canvas>
+            </div>
+          </div>
+          <div class="card current-conditions">
+            <div class="card current-humidity">
+              <h3>현재 습도</h3>
+              <div class="chart">
+                <div>
+                  <h2 id="humidity">N/A</h2>
+                </div>
+              </div>
+            </div>
+            <div class="card current-temperature">
+              <h3>현재 온도</h3>
+              <div class="chart">
+                <div>
+                  <h2 id="temperature">N/A</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 차트 라이브러리 로드 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- 자바스크립트 파일 로드 -->
+    <script src="script.js"></script>
+  </body>
+</html>

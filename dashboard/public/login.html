@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>관리자 로그인</title>
+    <style>
+      /* 전체 레이아웃 설정 */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f9;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      /* 로고 스타일 */
+      .logo h1 {
+        font-size: 24px;
+        color: #5e5ce6;
+        margin-bottom: 50px;
+      }
+
+      /* 로그인 박스 스타일 */
+      .login-box {
+        width: 350px;
+        padding: 40px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      .login-box h2 {
+        margin-bottom: 30px;
+        color: #333;
+      }
+
+      /* 입력 필드 스타일 */
+      .input-box {
+        margin-bottom: 20px;
+      }
+
+      .input-box input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      /* 링크 스타일 */
+      .links {
+        margin: 15px 0;
+      }
+
+      .links a {
+        text-decoration: none;
+        color: #666;
+        font-size: 12px;
+      }
+
+      .links a:hover {
+        color: #5e5ce6;
+      }
+
+      /* 로그인 버튼 스타일 */
+      .login-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #5e5ce6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .login-btn:hover {
+        background-color: #4e4ac8;
+      }
+    </style>
+    <script>
+      function handleLogin(event) {
+        event.preventDefault(); // 기본 폼 제출 방지
+
+        // 여기에 간단한 검증 로직을 추가할 수 있습니다.
+        // 예: 사용자 이름과 비밀번호가 특정 값인 경우 대시보드로 리디렉션
+
+        // 예제에서는 로그인 버튼 클릭 시 무조건 대시보드로 이동
+        window.location.href = 'index.html';
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <h1>자화수</h1>
+      </div>
+      <div class="login-box">
+        <h2>관리자 로그인</h2>
+        <form onsubmit="handleLogin(event)">
+          <div class="input-box">
+            <input type="text" name="username" required placeholder="아이디 입력" />
+          </div>
+          <div class="input-box">
+            <input type="password" name="password" required placeholder="비밀번호 입력" />
+          </div>
+          <div class="links">
+            <a href="#">회원가입</a> | <a href="#">아이디 찾기</a> |
+            <a href="#">비밀번호 찾기</a>
+          </div>
+          <button type="submit" class="login-btn">로그인</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- function fetchSensorData() {
+  fetch('/api/sensor')
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById('temperature').textContent = data.temperature !== null ? data.temperature : 'N/A';
+      document.getElementById('humidity').textContent = data.humidity !== null ? data.humidity : 'N/A';
+    })
+    .catch((error) => console.error('Error fetching sensor data:', error));
+} -->

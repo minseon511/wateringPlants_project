@@ -1,0 +1,196 @@
+/* 기본 스타일 설정 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* 이중 스크롤 방지 */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+}
+
+/* 컨테이너 스타일 */
+.container {
+  display: flex;
+  height: 100vh; /* 뷰포트 전체 높이 사용 */
+  width: 100%;
+  overflow: hidden; /* 이중 스크롤 방지 */
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+  width: 200px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100vh; /* 전체 화면 높이에 맞게 설정 */
+  overflow-y: auto; /* 사이드바 내용이 넘치면 스크롤 가능하게 설정 */
+}
+
+.sidebar h1 {
+  color: #5e5ce6;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* 기본 여백 제거 */
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+  color: #5e5ce6;
+}
+
+/* 콘텐츠 영역 스타일 */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto; /* 메인 콘텐츠가 넘칠 때 스크롤 가능하게 설정 */
+}
+
+/* 헤더 스타일 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header .date-time {
+  font-size: 18px;
+  color: #888;
+}
+
+.header .user {
+  display: flex;
+  align-items: center;
+}
+
+.header .user img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.header .user span {
+  font-size: 18px;
+  color: #333;
+}
+
+/* 대시보드 스타일 */
+.dashboard {
+  display: grid;
+  grid-template-areas:
+    'bar-chart pie-chart'
+    'line-chart current-conditions';
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+/* 카드 위치 설정 */
+.bar-chart {
+  grid-area: bar-chart;
+}
+
+.pie-chart {
+  grid-area: pie-chart;
+}
+
+.line-chart {
+  grid-area: line-chart;
+}
+
+.current-conditions {
+  grid-area: current-conditions;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+}
+
+/* 개별 카드의 스타일 재정의 */
+.current-humidity,
+.current-temperature {
+  flex: 1;
+  margin-bottom: 20px;
+  box-shadow: none !important; /* 카드 그림자 제거 */
+  border: none !important; /* 카드 테두리 제거 */
+  background-color: transparent !important; /* 카드 배경 제거 */
+}
+
+.current-humidity:last-child {
+  margin-bottom: 0;
+}
+
+/* 공통 카드 스타일 (다른 카드들에 적용) */
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.chart canvas {
+  width: 100%;
+}
+
+.temperature-chart,
+.humidity-chart {
+  height: 200px;
+}
+
+/* 실시간 수분량 카드 헤더 스타일 */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* 자세히 버튼 스타일 */
+.details-btn {
+  background-color: #5e5ce6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  background-color: #4e4ac8;
+}
+
+/* 자화수 관리와 모니터링 글자색 흰색으로 설정 */
+.white-text {
+  color: #ffffff;
+}

@@ -1,0 +1,193 @@
+/* 기본 스타일 설정 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+}
+
+/* 컨테이너 스타일 */
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+  width: 200px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar h1 {
+  color: #5e5ce6;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+  color: #5e5ce6;
+}
+
+.logout {
+  margin-top: auto;
+}
+
+.logout a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+/* 콘텐츠 영역 스타일 */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* 헤더 스타일 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header .date-time {
+  font-size: 18px;
+  color: #888;
+}
+
+.header .user {
+  display: flex;
+  align-items: center;
+}
+
+.header .user img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.header .user span {
+  font-size: 18px;
+  color: #333;
+}
+
+/* 그리드 컨테이너 */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 세 개의 열 */
+  grid-template-rows: 2fr 3fr; /* 상단 40%, 하단 60% 비율 */
+  gap: 20px;
+  height: calc(100vh - 100px); /* 헤더와 패딩을 제외한 전체 높이 */
+}
+
+/* 카드 스타일 */
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 상단 카드 배치 설정 */
+.card:nth-child(1) {
+  /* 자화수 배터리 상태 */
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.card:nth-child(2) {
+  /* 자화수 물탱크 */
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.card:nth-child(3) {
+  /* 상태 버튼 */
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* 하단 카드 배치 설정 */
+.card:nth-child(4) {
+  /* 자화수 위치 */
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.card:nth-child(5) {
+  /* 자화수 CAM */
+  grid-column: 2 / 4; /* 두 번째 열부터 세 번째 열까지 차지하도록 설정 */
+  grid-row: 2 / 3;
+}
+
+/* 상태 버튼 스타일 */
+.status-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.status-buttons button {
+  flex: 1 1 calc(50% - 10px); /* 버튼 4개가 두 줄에 배치되도록 설정 */
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.status-buttons .stop {
+  background-color: #ff5252;
+}
+
+.status-buttons .error {
+  background-color: #ffaf2e;
+}
+
+.status-buttons .run {
+  background-color: #57c965;
+}
+
+.status-buttons .system-error {
+  background-color: #ffd966;
+}
+
+/* 이미지 스타일 */
+.card img {
+  width: 50%;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: block;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자화수 대시보드</title>
+    <link rel="stylesheet" href="manage.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h1>자화수</h1>
+        <ul>
+          <li><a href="index.html">대시보드</a></li>
+          <li><a href="#">자화수 관리</a></li>
+          <!-- <li><a href="#">모니터링</a></li> -->
+        </ul>
+        <div class="logout">
+          <a href="login.html">로그아웃</a>
+        </div>
+      </div>
+      <div class="content">
+        <div class="header">
+          <div id="date-time">time</div>
+          <div class="user">
+            <span>Thinking Chair</span>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="card">
+            <h3>자화수 배터리 상태</h3>
+            <div class="status">🔋 60%</div>
+          </div>
+          <div class="card">
+            <h3>자화수 물탱크</h3>
+            <div class="status">💧 900ml</div>
+          </div>
+          <div class="card">
+            <div class="status-buttons">
+              <button class="stop">수동 정지</button>
+              <button class="error">기계 오류</button>
+              <button class="run">운행</button>
+              <button class="system-error">시스템 오류</button>
+            </div>
+          </div>
+          <div class="card">
+            <h3>자화수 위치</h3>
+            <img src="map-image.png" alt="Map" />
+          </div>
+          <div class="card">
+            <h3>자화수 CAM</h3>
+            <img src="cam-image.jpg" alt="CAM" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // 시간 업데이트 함수
+      function updateDateTime() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const formattedTime = `${year}.${month}.${day} ${hours}:${minutes}:${seconds}`;
+        document.getElementById('date-time').textContent = formattedTime;
+      }
+
+      // 페이지 로드 시 데이터 가져오기 및 1초마다 시간 갱신
+      window.onload = function () {
+        updateDateTime();
+        setInterval(updateDateTime, 1000); // 1초마다 시간 갱신
+      };
+    </script>
+  </body>
+</html>
