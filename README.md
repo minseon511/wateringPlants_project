@@ -21,5 +21,5 @@
 
 ## 技術スタック (コア技術)
 
-* H/W: `Raspberry Pi 4/5`, `YDLIDAR X4`, `LOLIN D1 Mini`, `水分センサー`, `DHT11 温湿度センサー`
-* S/W: `ROS 2 (Foxy/Humble)`, `Python`, `YOLOv5`, `MQTT`, `Ubuntu`
+* H/W: `LOLIN D1 Mini`, `水分センサー`, `DHT11 温湿度センサー`
+* S/W: `html`, `css`, `node.js`, `javascript`, `node.js`, `MySQL`, `c++`
