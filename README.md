@@ -1,5 +1,6 @@
 
 ## スマート水分管理 自律走行ロボット (チャファス)
+<img width="2880" height="1800" alt="스크린샷 2024-09-02 125637" src="https://github.com/user-attachments/assets/d5f4d1d0-d865-4996-81c8-24aee2e00acd" />
 
 
 ## プロジェクト紹介
